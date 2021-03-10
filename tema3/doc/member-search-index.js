@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"MainFile","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"<Unnamed>","c":"MainFile","l":"MainFile()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"MainFile","l":"printRegisteredTeams(ArrayList<Team>, PrintWriter)","url":"printRegisteredTeams(java.util.ArrayList,java.io.PrintWriter)"}]

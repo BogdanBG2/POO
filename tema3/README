@@ -1,0 +1,46 @@
+										TEMA 3 POO
+											de Bogdan - Andrei Buga
+												grupa 322CB
+	
+Clasele folosite
+	1) Player -	retine numele si scorul unui jucator; jucatorii pot fi comparati dupa scor.
+	2) Team -	retine numele, genul, numarul de jucatori, numarul de puncte, pozitia in clasament
+					si lista cu jucatori ai unei echipe; poate fi de 3 tipuri:
+						2.a) FootballTeam - echipa de fotbal;
+						2.b) BasketballTeam - echipa de baschet;
+						2.c) HandballTeam - echipa de handbal.
+	3) TeamFactory - 	o clasa de tip Factory Design Pattern care construieste o echipa pe un tip
+								de sport dat ca parametru ("football" / "basketball" / "handball");
+								este implementata si ca Singleton Design Pattern.
+	4) Visitable si Visitor - folosite in implementatrea unui Visitor Design Pattern, impreuna cu
+									clasa Team si subclasele acesteia, cu scopul de a accesa scorul
+									unei echipe.
+	5) Competition  -	retine tipul, genul, lista cu echipele inregistrate si numarul de echipe;
+								clasamentul final este generat cu functia "ranking()", in care 
+								echipa cu numele in "value" a terminat competitia pe locul "key".
+	7) Observer si Subject - folosite in implementatrea unui Observer Design Pattern, impreuna
+								cu clasele Team si Competition, cu scopul de a actuailza pozitia
+								unei echipe in clasamentul competitiei in functie de numarul de
+								puncte al celorlaltor echipe din competitiei respective.
+	8) PointComparator - reprezinta un comparator de echipe in functie de numarul de puncte
+								acumulate dupa unul sau mai multe meciuri jucate.
+								
+		Toate functiile utilizate cu scopul realizarii acestei teme au fost descrise in Java-doc,
+	in engleza, pentru a evita un cod scris in „romgleza”.
+	
+Implementarea programului principal(fisierul "MainFile")
+	La rularea programului, se dau si 4 parametrii in linia de comanda:
+		i) numele comenzii ("inscriere" sau "competitie");
+		ii) primul fisier de intrare - in1;
+		iii) al doilea fisier de intrare (va fi folosit doar la comanda "competitie") - in2;
+		iv) fisierul de iesire - out.
+	Se citesc din in1 echipele construite cu TeamFactory si jucatorii acestora. Toate echipele
+vor fi retinute intr-o baza de date.
+	Daca se cere inscrierea echipelor, se vor scrie in out informatiile despre fiecare echipa si
+fiecare jucator al acesteia.
+	Daca se cere o competitie, se va deschide in2 si se vor citi atat tipul si genul competitiei,
+cat si numele echipelor care vor sa participe. Acestea vor fi acceptate doar daca respecta genul
+si tipul competitiei respective.
+	Dupa ce se joaca toate meciurile posibile o singura data, se vor afisa numele echipelor de pe
+primele 3 locuri la finalul competitiei si ce loc a ocupat fiecare echipa in ordinea in care
+acestea au fost adaugate / inregistrate in competitie.

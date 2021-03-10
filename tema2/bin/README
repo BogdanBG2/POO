@@ -1,0 +1,43 @@
+TEMA 2 POO
+Bogdan - Andrei Buga, 322 CB
+
+Clasele folosite
+		1) Room - retine numele, id-ul senzorului de temperatura si umiditate, suprafata
+			si toate temperaturile si umiditatile inregistrate in ultimele 24 de ore;
+			acestea sunt retinute in 2 HashMap-uri care au chei de la 0 la 23 si valori
+			egale cu TreeSet-uri <Double> (temperaturile sunt mereu sortate crescator,
+			iar umidiatile sunt mereu sortate descrescator).
+		2) House - contine un ArrayList<Room> de camere, o temperatura globala si o
+		umiditate globala.
+		 
+		Toate functiile utilizate cu scopul realizarii acestei teme au fost descrise in 
+	 Java-doc, in engleza, pentru a evita un cod in „romgleza”.
+	 
+ Implementarea programului principal (fisierul "MainFile")
+			Se citeste prima linie din fisierul "therm.in". Daca sunt doar 3 parametrii,
+		umiditatea va fi neglijata la calcule. Din acesti parametrii, primul reprezinta
+		numarul n de camere din casa, al doilea reprezinta temperatura globala initiala,
+		iar ultimul reprezinta un Unix Timestamp de referinta. In cazul in care avem 4
+		parametri, al treilea reprezinta umiditatea globala.
+			Dupa aceea, se citesc informatiile despre toate cele cele n camere.
+			Se citesc si se anallizeaza toate comenzile pana la sfarsitul fisierului.
+				a) OBSERVE
+						- adauga in camera data ca parametru 
+						o temperatura data la un timestamp dat;
+				b) OBSERVEH
+						- adauga in camera data ca parametru 
+						o valoare de umiditate data la un timestamp dat;
+				c) TRIGGER HEAT
+						- afiseaza mesajul returnat de metoda triggerHeat(ref_timestamp, bonus):
+							- "YES", daca media ponderata a umiditatilor minime in functie de suprafata este
+							mai mica decat umiditatea globala (doar daca bonus == true, caz in care este conditie prioritara) 
+							si daca media ponderata a temperaturilor minime in functie de suprafata este mai mica 
+							decat temperatura globala;
+							- "NO", altfel;
+				d) TEMPERATURE
+						- modifica temperatura globala a casei;
+				e) LIST
+						- afiseaza numele camerei data ca parametru, impreuna cu 
+						toate temperaturile din intervalul ales cu captele date in parametri, 
+						grupate dupa cate ore mai sunt pana la timpul de referinta 
+						si sortate crescator.
